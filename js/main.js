@@ -35,9 +35,10 @@ function renderModal(idx) {
                    <img class="img-fluid d-block mx-auto" src="${project.imgUrl}" alt="">
                    <p>${project.desc}</p>
                    <ul class="list-inline">
-                     <li>Date: January 2017</li>
-                     <li>Client: Threads</li>
-                     <li>Category: Illustration</li>
+                     <li>Hashtags: ${project.labels.join(', ')}</li>
+                     <li>Date: ${project.publishedAt}</li>
+                     <!-- <li>Client Threads</li>> -->
+                     <li class="m-2" >Category: ${project.category}</li
                    </ul>
                    <a class="btn btn-primary" href="${project.url}" target="_blank">Open The Project</a>
                    <button class="btn btn-primary" data-dismiss="modal" type="button">
