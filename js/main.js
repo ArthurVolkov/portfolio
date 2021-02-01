@@ -1,7 +1,7 @@
 console.log('Starting up');
 
 
-$(document).ready(function() {
+$(document).ready(function () {
     renderProjects()
 })
 
@@ -16,7 +16,7 @@ function renderProjects() {
                         <i class="fa fa-plus fa-3x"></i>
                       </div>
                     </div>
-                    <img class="img-fluid" src="img/portfolio/${idx+1}-thumbnail.jpg" alt="">
+                    <img class="img-fluid" src="img/portfolio/${idx + 1}-thumbnail.jpg" alt="">
                   </a>
                   <div class="portfolio-caption">
                     <h4>${project.name}</h4>
@@ -30,7 +30,7 @@ function renderProjects() {
 
 function renderModal(idx) {
     var project = getProjects()[idx];
-    var strHTML = `<h2>${project.name }</h2>
+    var strHTML = `<h2>${project.name}</h2>
                    <p class="item-intro text-muted">${project.title}.</p>
                    <img class="img-fluid d-block mx-auto" src="${project.imgUrl}" alt="">
                    <p>${project.desc}</p>
@@ -45,4 +45,22 @@ function renderModal(idx) {
                        <i class="fa fa-times"></i>
                        Close details</button>`
     $('.modal-body').html(strHTML)
+}
+
+
+function onSend() {
+    var emailAdress = $('#input1').val();
+    var emailSubject = $('#textarea1').val();
+    var emailTxt = $('#textarea2').val();
+    if (!ValidateEmail(emailAdress) || !emailSubject || !emailTxt) return
+    var link = `https://mail.google.com/mail/?view=cm&fs=1&to=${emailAdress}&su=${emailSubject}&body=${emailTxt}`;
+    window.open(link)
+}
+
+
+function ValidateEmail(mail) {
+    if (/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(mail)) {
+        return (true)
+    }
+    return (false)
 }

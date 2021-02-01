@@ -47,6 +47,10 @@ section h3.section-subheading {
     background: linear-gradient(to right, #E5E4E3 0%, #A7D4FF 50%, #8CD0AE 100%);
 }
 
+section#contact {
+    background: rgb(253, 250, 211);
+}
+
 @media (min-width: 768px) {
     section {
         padding: 150px 0;
@@ -91,7 +95,7 @@ body {
 .offcanvas-aside {
     position: fixed;
     height: 100%;
-    background: red;
+    background-color: rgb(253, 250, 211);
     width: 80vw;
     right: -80vw;
     z-index: 10;
